@@ -75,7 +75,7 @@ gulp.task('browserSync', function () {
 // Transform Sass to CSS
 // Reload web server
 gulp.task('sass', function () {
-   return gulp.src(dev.dir.sass + '/**/*.scss')
+   return gulp.src(dev.dir.sass + '/main.scss')
        .pipe(sass().on('error', sass.logError))
        .pipe(autoprefixer({
            cascade: false
