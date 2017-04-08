@@ -135,7 +135,7 @@ gulp.task('clean:dist', function () {
 });
 
 //--------------------------------------------------------|
-// Gulp tasks for other purpose
+// Gulp tasks for other purposes
 //--------------------------------------------------------|
 
 // Cache clear task

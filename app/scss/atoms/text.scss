@@ -1,0 +1,30 @@
+p {
+  color: $black-dark;
+
+  &.wiliam-description {
+    font-size: 24px;
+    line-height: 30px;
+
+    .green {
+      color: $green;
+    }
+  }
+
+  &.work-date {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &.footer-text {
+    font-size: 16px;
+    color: $black-dark;
+  }
+}
+
+.work-description {
+  p {
+    color: $black-light;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

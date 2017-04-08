@@ -1,0 +1,32 @@
+ul {
+  &.socials-list {
+    margin-top: 60px;
+
+    li {
+      display: inline-block;
+      margin-right: 50px;
+    }
+  }
+
+  &.dribbble-works-list-container {
+    li.row {
+      display: flex;
+      align-items: center;
+      margin: 160px 0;
+
+      &:nth-child(odd) {
+        > div:last-child {
+          margin-left: 8.33333333%;
+        }
+      }
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+
+        > div:last-child {
+          margin-right: 8.33333333%;
+        }
+      }
+    }
+  }
+}
