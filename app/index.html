@@ -19,10 +19,26 @@
                 <p>Designer d’expériences digitales et étudiant en quatrième année à HETIC, je recherche un stage en UI/UX Design pour une période de 6 mois à partir du 19 juin 2017. Je suis également disponible en Freelance</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div id="dribbble-works-list-container"></div>
+            </div>
+        </div>
     </div>
     <!--build:js css/main.min.js-->
     <script src="js/vendor/jquery-3.2.0.min.js"></script>
+    <script src="js/vendor/handlebars.min-latest.js"></script>
+    <script src="js/vendor/handlebars-intl-with-locales.min.js"></script>
     <script src="js/main.js"></script>
     <!--endbuild-->
+
+    <script id="dribbble-works-list-template" type="text/x-handlebars-template">
+        {{#each works}}
+        <h2>{{title}}</h2>
+        <p>{{{description}}}</p>
+        <p>{{formatDate created_at "short"}}</p>
+        <img src="{{images.teaser}}" alt="{{title}}">
+        {{/each}}
+    </script>
 </body>
 </html>
