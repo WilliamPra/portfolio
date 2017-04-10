@@ -72,11 +72,11 @@
   display: inline-block;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1); }
 
-.dribbble-works-list-container li .col-xs-4 .work-image-container:after {
+.dribbble-works-list-container li .work-image-container:after {
   content: '';
   position: absolute; }
 
-.dribbble-works-list-container li:first-child .col-xs-4 .work-image-container:after, .dribbble-works-list-container li:nth-child(5) .col-xs-4 .work-image-container:after {
+.dribbble-works-list-container li:first-child .work-image-container:after, .dribbble-works-list-container li:nth-child(5) .work-image-container:after {
   top: -60px;
   right: -60px;
   width: 184px;
@@ -84,7 +84,7 @@
   border-radius: 50%;
   background: url("../../images/waves2.svg"); }
 
-.dribbble-works-list-container li:nth-child(2) .col-xs-4 .work-image-container:after {
+.dribbble-works-list-container li:nth-child(2) .work-image-container:after {
   top: -67px;
   left: 50%;
   width: 232px;
@@ -93,7 +93,7 @@
   -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0); }
 
-.dribbble-works-list-container li:nth-child(3) .col-xs-4 .work-image-container:after {
+.dribbble-works-list-container li:nth-child(3) .work-image-container:after {
   top: -60px;
   left: 100px;
   width: 184px;
@@ -101,7 +101,7 @@
   background: rgba(0, 198, 255, 0.3);
   border-radius: 50%; }
 
-.dribbble-works-list-container li:nth-child(4) .col-xs-4 .work-image-container:after {
+.dribbble-works-list-container li:nth-child(4) .work-image-container:after {
   top: -82px;
   left: -57px;
   width: 232px;
