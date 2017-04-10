@@ -4,7 +4,7 @@ var accessTokenParam = '?access_token=' + dribbbleAcessToken;
 var williamShotsUrl = dribbbleApiUrl + '/users/WilliamP/shots' + accessTokenParam;
 
 Handlebars.registerHelper('list', function(array) {
-    return array.join("  ");
+    return array.join(", ");
 });
 
 HandlebarsIntl.registerWith(Handlebars);
@@ -28,6 +28,7 @@ $(document).ready(function () {
        url: williamShotsUrl,
        type: 'GET'
    }).done(function (data) {
+       console.log(data);
        var source = $("#dribbble-works-list-template").html();
        var template = Handlebars.compile(source);
        data.sort(function(a, b) {
@@ -42,15 +43,38 @@ $(document).ready(function () {
 
        $('a, .work-image-container').addClass('visible');
 
-       $('.work-hd-image-button').click(function(e) {
+       $('.work-attachments-button').click(function(e) {
            e.preventDefault();
 
-           $(e.target).siblings('.work-hd-image-container').fadeIn()
-       });
+           $('.work-attachments-container').fadeIn()
 
-       $('.glyphicon-remove').click(function (e) {
-           $(e.target).parent('.work-hd-image-container').fadeOut()
-       })
+           var index = $(e.target).parents('li.row').index();
+           var williamAttachmentsUrl = dribbbleApiUrl + '/shots/' + data[index].id + '/attachments' + accessTokenParam;
+
+           $.get(williamAttachmentsUrl, function (data) {
+               console.log(data);
+               var attachmentsSource = $('#dribbble-attachments-template').html();
+               var attachmentsTemplate = Handlebars.compile(attachmentsSource);
+               var attachmentsContext = { attachments: data };
+               var attachmentsHtml = attachmentsTemplate(attachmentsContext);
+
+               $('.work-attachments-container').html(attachmentsHtml);
+           }).done(function () {
+               $('.glyphicon-remove').click(function (e) {
+                   $('.work-attachments-container').fadeOut()
+               });
+
+               $('.work-attachments-container').click(function() {
+                   $('.work-attachments-container').fadeOut()
+               });
+
+               $('.work-attachments-container img').click(function(e) {
+                   console.log('click on image');
+                   e.stopPropagation();
+                   return false;
+               });
+           });
+       });
    });
 
     $('a[href="#top"]').click(function(e){

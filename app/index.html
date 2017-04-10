@@ -33,6 +33,7 @@
                 <ul class="dribbble-works-list-container"></ul>
             </div>
         </div>
+        <div class="work-attachments-container"></div>
         <footer>
             <p class="footer-text"><a class="footer-link" href="#top">Retourner en haut</a> - Développé avec ❤ par <a href="http://valentin-crochemore.fr/" target="_blank">Valentin Crochemore</a></p>
         </footer>
@@ -47,24 +48,29 @@
     <script id="dribbble-works-list-template" type="text/x-handlebars-template">
         {{#each works}}
             <li class="row">
-                <div class="col-xs-4">
+                <div class="col-xs-5">
                     <div class="work-image-container">
                         <img class="work-image" src="{{images.normal}}" alt="{{title}}">
                     </div>
                 </div>
-                <div class="col-xs-8">
+                <div class="col-xs-7">
                     <h2>{{title}}</h2>
                     <p class="work-date">{{formatDate created_at "short"}}</p>
                     <div class="work-description">
                         <p>{{list tags}}</p>
                     </div>
-                    <a class="work-hd-image-button" href="#">Cliquez ici pour le voir en HD</a>
-                    <div class="work-hd-image-container">
-                        <span class="glyphicon glyphicon-remove"></span>
-                        <img src="{{images.hidpi}}" alt="{{title}}">
-                    </div>
+                    {{#if attachments_count}}
+                        <a class="work-attachments-button" href="#">Cliquez ici pour le voir en HD</a>
+                    {{/if}}
                 </div>
             </li>
+        {{/each}}
+    </script>
+
+    <script id="dribbble-attachments-template" type="text/x-handlebars-template">
+        {{#each attachments}}
+            <span class="glyphicon glyphicon-remove"></span>
+            <img src="{{url}}" alt="attachment-{{id}}">
         {{/each}}
     </script>
 </body>

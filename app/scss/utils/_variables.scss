@@ -13,8 +13,10 @@ $green: #20f26f;
 $default-duration: .5s;
 $default-ease: ease-in-out;
 $default-delay: .5s;
+$hover-duration: .25s;
 
 $main-transition: all $default-duration $default-ease;
+$hover-transition: all $hover-duration $default-ease;
 
 $fade-in: fadeIn $default-duration $default-ease;
 $expand-to-right: expandToRight $default-duration $default-ease both $default-delay;

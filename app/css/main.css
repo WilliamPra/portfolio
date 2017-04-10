@@ -70,7 +70,7 @@
   width: 100%;
   position: relative;
   display: inline-block;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1); }
 
 .dribbble-works-list-container li .col-xs-4 .work-image-container:after {
   content: '';
@@ -108,54 +108,26 @@
   height: 127px;
   background: url("../../images/waves.svg"); }
 
-.work-hd-image-container {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3); }
-  .work-hd-image-container img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    transform: translate3d(-50%, -50%, 0);
-    max-width: 95%; }
-  .work-hd-image-container .glyphicon-remove {
-    font-size: 30px;
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    color: white;
-    cursor: pointer; }
-
 a {
   color: #131313;
   position: relative;
-  display: inline-block;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
+  display: inline-block; }
   a.visible:after {
     -webkit-animation: expandToRight 0.5s ease-in-out both 0.5s;
     animation: expandToRight 0.5s ease-in-out both 0.5s; }
   a:hover, a:focus {
-    text-decoration: none;
-    color: #20f26f; }
+    text-decoration: none; }
     a:hover:after, a:focus:after {
       background: #20f26f;
       -webkit-transform: translate3d(0, 3px, 0);
       transform: translate3d(0, 3px, 0); }
   a.socials-link {
     font-size: 24px; }
-  a.work-hd-image-button {
+  a.work-attachments-button {
     font-size: 20px;
     line-height: 32px; }
   a.footer-link {
-    font-size: 16px;
-    color: #131313; }
+    font-size: 16px; }
   a:after {
     content: '';
     position: absolute;
@@ -164,8 +136,8 @@ a {
     width: 0;
     height: 2px;
     background: #181818;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out; }
 
 p {
   color: #131313; }
@@ -205,6 +177,30 @@ h2 {
 
 .dribbble-works-list-container {
   min-height: 75vh; }
+
+.work-attachments-container {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); }
+  .work-attachments-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    max-height: 95%; }
+  .work-attachments-container .glyphicon-remove {
+    font-size: 30px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    color: white;
+    cursor: pointer; }
 
 ul.socials-list {
   margin-top: 60px; }
