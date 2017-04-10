@@ -8,59 +8,69 @@
 .dribbble-works-list-container {
   li {
     .col-xs-4 {
-      &:after {
-        content: '';
-        position: absolute;
+      .work-image-container {
+        &:after {
+          content: '';
+          position: absolute;
+        }
       }
     }
     &:first-child,
     &:nth-child(5) {
       .col-xs-4 {
-        &:after {
-          top: -60px;
-          right: -6px;
-          width: 184px;
-          height: 184px;
-          border-radius: 50%;
-          background: url("../../images/waves2.svg");
+        .work-image-container {
+          &:after {
+            top: -60px;
+            right: -60px;
+            width: 184px;
+            height: 184px;
+            border-radius: 50%;
+            background: url("../../images/waves2.svg");
+          }
         }
       }
     }
 
     &:nth-child(2) {
       .col-xs-4 {
-        &:after {
-          top: -67px;
-          left: 50%;
-          width: 232px;
-          height: 112px;
-          background: rgba(255, 134, 173, 0.3);
-          transform: translate3d(-50%, 0, 0);
+        .work-image-container {
+          &:after {
+            top: -67px;
+            left: 50%;
+            width: 232px;
+            height: 112px;
+            background: rgba(255, 134, 173, 0.3);
+            transform: translate3d(-50%, 0, 0);
+          }
         }
       }
     }
 
     &:nth-child(3) {
       .col-xs-4 {
-        &:after {
-          top: -60px;
-          left: 100px;
-          width: 184px;
-          height: 184px;
-          background: rgba(0, 198, 255, 0.3);
-          border-radius: 50%;
+        .work-image-container {
+          &:after {
+            top: -60px;
+            left: 100px;
+            width: 184px;
+            height: 184px;
+            background: rgba(0, 198, 255, 0.3);
+            border-radius: 50%;
+          }
         }
       }
     }
 
     &:nth-child(4) {
       .col-xs-4 {
-        &:after {
-          top: -82px;
-          left: -57px;
-          width: 232px;
-          height: 127px;
-          background: url("../../images/waves.svg");
+        .work-image-container {
+          &:after {
+            top: -82px;
+            left: -57px;
+            width: 232px;
+            height: 127px;
+            background: url("../../images/waves.svg");
+          }
         }
       }
     }

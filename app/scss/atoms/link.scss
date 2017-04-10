@@ -2,21 +2,27 @@ a {
   color: $black-dark;
   position: relative;
   display: inline-block;
+  transition: $main-transition;
+
+  &.visible {
+    &:after {
+      animation: $expand-to-right;
+    }
+  }
 
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $black-dark;
+    color: $green;
+
+    &:after {
+      background: $green;
+      transform: translate3d(0, 3px, 0);
+    }
   }
 
   &.socials-link {
-    color: $black-darker;
     font-size: 24px;
-
-    &:hover,
-    &:focus {
-      color: $black-darker;
-    }
   }
 
   &.work-hd-image-button {
@@ -34,8 +40,9 @@ a {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 2px;
     background: $black-darker;
+    transition: $main-transition;
   }
 }

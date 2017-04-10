@@ -8,3 +8,56 @@ $black-dark: #131313;
 $black-darker: #181818;
 
 $green: #20f26f;
+
+// Transitions & animations
+$default-duration: .5s;
+$default-ease: ease-in-out;
+$default-delay: .5s;
+
+$main-transition: all $default-duration $default-ease;
+
+$fade-in: fadeIn $default-duration $default-ease;
+$expand-to-right: expandToRight $default-duration $default-ease both $default-delay;
+$slide-to-right: slideToRight $default-duration $default-ease both $default-delay;
+$slide-to-left: slideToLeft $default-duration $default-ease both $default-delay;
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes expandToRight {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slideToRight {
+  from {
+    transform: translate3d(-150%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideToLeft {
+   from {
+     transform: translate3d(150%, 0, 0);
+   }
+
+   to {
+     transform: translate3d(0, 0, 0);
+   }
+ }

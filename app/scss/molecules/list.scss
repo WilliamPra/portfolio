@@ -13,10 +13,17 @@ ul {
       display: flex;
       align-items: center;
       margin: 160px 0;
+      animation: $fade-in;
 
       &:nth-child(odd) {
         > div:last-child {
           margin-left: 8.33333333%;
+        }
+
+        .work-image-container {
+          &.visible {
+            animation: $slide-to-right;
+          }
         }
       }
 
@@ -25,6 +32,12 @@ ul {
 
         > div:last-child {
           margin-right: 8.33333333%;
+        }
+
+        .work-image-container {
+          &.visible {
+            animation: $slide-to-left;
+          }
         }
       }
     }

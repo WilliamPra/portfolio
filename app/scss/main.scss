@@ -9,6 +9,7 @@
 @import "atoms/title";
 
 // Molecules
+@import "molecules/container";
 @import "molecules/list";
 
 // Organisms
@@ -16,4 +17,8 @@
 
 body {
   font-family: $inconsolata;
+}
+
+.of-hidden {
+  overflow: hidden;
 }

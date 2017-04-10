@@ -2,7 +2,6 @@ var dribbbleApiUrl = 'https://api.dribbble.com/v1';
 var dribbbleAcessToken = '8b40a3340377aa47a766e103088149201edcb2c1b130e56d20265ac72d0c619c';
 var accessTokenParam = '?access_token=' + dribbbleAcessToken;
 var williamShotsUrl = dribbbleApiUrl + '/users/WilliamP/shots' + accessTokenParam;
-console.log(williamShotsUrl);
 
 Handlebars.registerHelper('list', function(array) {
     return array.join("  ");
@@ -29,7 +28,6 @@ $(document).ready(function () {
        url: williamShotsUrl,
        type: 'GET'
    }).done(function (data) {
-       console.log(data);
        var source = $("#dribbble-works-list-template").html();
        var template = Handlebars.compile(source);
        data.sort(function(a, b) {
@@ -42,12 +40,13 @@ $(document).ready(function () {
        });
        $(".dribbble-works-list-container").html(html);
 
+       $('a, .work-image-container').addClass('visible');
+
        $('.work-hd-image-button').click(function(e) {
-           console.log(e);
            e.preventDefault();
 
            $(e.target).siblings('.work-hd-image-container').fadeIn()
-       })
+       });
 
        $('.glyphicon-remove').click(function (e) {
            $(e.target).parent('.work-hd-image-container').fadeOut()
