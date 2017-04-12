@@ -20,8 +20,13 @@ $hover-transition: all $hover-duration $default-ease;
 
 $fade-in: fadeIn $default-duration $default-ease;
 $expand-to-right: expandToRight $default-duration $default-ease both $default-delay;
+$reduce-to-right: reduceToRight $default-duration $default-ease both $default-delay;
 $slide-to-right: slideToRight $default-duration $default-ease both $default-delay;
 $slide-to-left: slideToLeft $default-duration $default-ease both $default-delay;
+
+$sk-scaleout: sk-scaleout 1.0s infinite ease-in-out;
+
+$box-shadow: boxShadow $default-duration $default-ease both 1s;
 
 
 @keyframes fadeIn {
@@ -44,6 +49,16 @@ $slide-to-left: slideToLeft $default-duration $default-ease both $default-delay;
   }
 }
 
+@keyframes reduceToRight {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0;
+  }
+}
+
 @keyframes slideToRight {
   from {
     transform: translate3d(-150%, 0, 0);
@@ -62,4 +77,25 @@ $slide-to-left: slideToLeft $default-duration $default-ease both $default-delay;
    to {
      transform: translate3d(0, 0, 0);
    }
- }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes boxShadow {
+  from {
+    box-shadow: 0;
+  }
+
+  to {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  }
+}

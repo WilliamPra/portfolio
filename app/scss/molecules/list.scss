@@ -19,12 +19,6 @@ ul {
         > div:last-child {
           margin-left: 8.33333333%;
         }
-
-        .work-image-container {
-          &.visible {
-            animation: $slide-to-right;
-          }
-        }
       }
 
       &:nth-child(even) {

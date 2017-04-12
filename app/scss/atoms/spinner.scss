@@ -1,0 +1,12 @@
+.spinner {
+  width: 100px;
+  height: 100px;
+  background-color: $green;
+  border-radius: 100%;
+  animation: $sk-scaleout;
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  z-index: 10;
+}

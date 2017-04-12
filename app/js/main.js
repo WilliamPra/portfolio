@@ -28,7 +28,7 @@ $(document).ready(function () {
        url: williamShotsUrl,
        type: 'GET'
    }).done(function (data) {
-       console.log(data);
+       $('.spinner').fadeOut();
        var source = $("#dribbble-works-list-template").html();
        var template = Handlebars.compile(source);
        data.sort(function(a, b) {
