@@ -45,7 +45,7 @@ $(document).ready(function () {
 
         // -------------------------------------------------
         // Handlebars template for the list of shots
-        // Sort Shots by popularity and date
+        // Return the 5 most popular shots order by descending date
         // Format date
         // -------------------------------------------------
         var source = $("#dribbble-works-list-template").html();
@@ -55,7 +55,6 @@ $(document).ready(function () {
         });
         data = data.slice(0, 5);
         data.sort(function(a, b) {
-            // console.log('date', new Date(a))
             return new Date(b.created_at) - new Date(a.created_at);
         });
         var context = { works: data};
@@ -69,8 +68,10 @@ $(document).ready(function () {
         // Animate links and images when shots loaded
         // -------------------------------------------------
         $('.spinner').fadeOut();
-        $('.container-fluid').fadeIn();
-        $('a, .work-image-container').addClass('visible');
+        setTimeout(function () {
+            $('.container-fluid').fadeIn();
+            $('a, .work-image-container').addClass('visible');
+        }, 500);
 
         // -------------------------------------------------
         // Parallax effect on shots' images, forms and texts
