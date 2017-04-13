@@ -23,7 +23,7 @@
         animation: $reduce-to-right;
       }
 
-      &:after {
+      .geometric-forms {
         content: '';
         position: absolute;
         opacity: 0;
@@ -34,7 +34,7 @@
     &:first-child,
     &:nth-child(5) {
       .work-image-container {
-        &:after {
+        .geometric-forms {
           top: -60px;
           right: -60px;
           width: 184px;
@@ -47,9 +47,9 @@
 
     &:nth-child(2) {
       .work-image-container {
-        &:after {
+        .geometric-forms {
           top: -67px;
-          left: 50%;
+          left: 37px;
           width: 232px;
           height: 112px;
           background: rgba(255, 134, 173, 0.3);
@@ -60,7 +60,7 @@
 
     &:nth-child(3) {
       .work-image-container {
-        &:after {
+        .geometric-forms {
           top: -60px;
           left: 100px;
           width: 184px;
@@ -73,7 +73,7 @@
 
     &:nth-child(4) {
       .work-image-container {
-        &:after {
+        .geometric-forms {
           top: -82px;
           left: -57px;
           width: 232px;

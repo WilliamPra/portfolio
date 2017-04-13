@@ -24,7 +24,7 @@ var devBaseDir = 'app';
 var dev = {
     dir: {
         sass: devBaseDir + '/scss',
-        css: devBaseDir + '/css',
+        css: devBaseDir + '/css/app',
         js: devBaseDir + '/js',
         images: devBaseDir + '/images',
         fonts: devBaseDir + '/fonts'
@@ -116,8 +116,8 @@ gulp.task('useref', function () {
 // Minify images for production
 // Accept PNG, JPG, GIF and SVG
 gulp.task('images', function () {
-    return qulp.src(dev.dir.images + '/**/*.+(png|jpg|gif|svg')
-        .pipe(cache(imagemin()))
+    return gulp.src(dev.dir.images + '/**/*.+(png|jpg|gif|svg)')
+        // .pipe(cache(imagemin()))
         .pipe(gulp.dest(prod.dir.images))
 });
 

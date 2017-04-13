@@ -1,12 +1,16 @@
-.spinner {
+.spinner,
+.spinner-attachments {
   width: 100px;
   height: 100px;
   background-color: $green;
   border-radius: 100%;
   animation: $sk-scaleout;
   position: fixed;
-  bottom: 10%;
+  bottom: 50%;
   left: 50%;
-  transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, -50%, 0);
   z-index: 10;
+}
+
+.spinner-attachments {
 }

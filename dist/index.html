@@ -8,11 +8,7 @@
 
     <link rel=icon href=images/favicon.png  type="image/png">
 
-    <!--build:css css/app/main.min.css-->
-    <link rel="stylesheet" href="css/vendor/reset.css">
-    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="css/app/main.css">
-    <!--endbuild-->
+    <link rel="stylesheet" href="css/app/main.min.css">
 </head>
 <body>
     <div class="spinner"></div>
@@ -39,23 +35,17 @@
             <p class="footer-text"><a class="footer-link" href="#top">Retourner en haut</a> - Développé avec ❤ par <a href="http://valentin-crochemore.fr/" target="_blank">Valentin Crochemore</a></p>
         </footer>
     </div>
-    <!--build:js js/main.min.js-->
-    <script src="js/vendor/jquery-3.2.0.min.js"></script>
-    <script src="js/vendor/handlebars.min-latest.js"></script>
-    <script src="js/vendor/handlebars-intl-with-locales.min.js"></script>
-    <script src="js/main.js"></script>
-    <!--endbuild-->
+    <script src="js/main.min.js"></script>
 
     <script id="dribbble-works-list-template" type="text/x-handlebars-template">
         {{#each works}}
             <li class="row">
-                <div class="col-xs-12 col-sm-5">
+                <div class="col-xs-5">
                     <div class="work-image-container">
                         <img class="work-image" src="{{images.normal}}" alt="{{title}}">
-                        <div class="geometric-forms"></div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-7 work-description-container">
+                <div class="col-xs-7">
                     <h2>{{title}}</h2>
                     <p class="work-date">{{formatDate created_at "short"}}</p>
                     <div class="work-description">
@@ -70,12 +60,9 @@
     </script>
 
     <script id="dribbble-attachments-template" type="text/x-handlebars-template">
-        <div class="spinner-attachments"></div>
         {{#each attachments}}
             <span class="glyphicon glyphicon-remove"></span>
-            <div class="attachments-image-container">
-                <img src="{{url}}" alt="attachment-{{id}}">
-            </div>
+            <img src="{{url}}" alt="attachment-{{id}}">
         {{/each}}
     </script>
 </body>

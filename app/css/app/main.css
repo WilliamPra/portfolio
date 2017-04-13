@@ -130,14 +130,14 @@
     transition: all 0.5s ease-in-out;
     -webkit-animation: reduceToRight 0.5s ease-in-out both 0.5s;
     animation: reduceToRight 0.5s ease-in-out both 0.5s; }
-  .dribbble-works-list-container li .work-image-container:after {
+  .dribbble-works-list-container li .work-image-container .geometric-forms {
     content: '';
     position: absolute;
     opacity: 0;
     -webkit-animation: fadeIn 0.5s ease-in-out both 1s;
     animation: fadeIn 0.5s ease-in-out both 1s; }
 
-.dribbble-works-list-container li:first-child .work-image-container:after, .dribbble-works-list-container li:nth-child(5) .work-image-container:after {
+.dribbble-works-list-container li:first-child .work-image-container .geometric-forms, .dribbble-works-list-container li:nth-child(5) .work-image-container .geometric-forms {
   top: -60px;
   right: -60px;
   width: 184px;
@@ -145,16 +145,16 @@
   border-radius: 50%;
   background: url("../../images/waves2.svg"); }
 
-.dribbble-works-list-container li:nth-child(2) .work-image-container:after {
+.dribbble-works-list-container li:nth-child(2) .work-image-container .geometric-forms {
   top: -67px;
-  left: 50%;
+  left: 37px;
   width: 232px;
   height: 112px;
   background: rgba(255, 134, 173, 0.3);
   -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0); }
 
-.dribbble-works-list-container li:nth-child(3) .work-image-container:after {
+.dribbble-works-list-container li:nth-child(3) .work-image-container .geometric-forms {
   top: -60px;
   left: 100px;
   width: 184px;
@@ -162,7 +162,7 @@
   background: rgba(0, 198, 255, 0.3);
   border-radius: 50%; }
 
-.dribbble-works-list-container li:nth-child(4) .work-image-container:after {
+.dribbble-works-list-container li:nth-child(4) .work-image-container .geometric-forms {
   top: -82px;
   left: -57px;
   width: 232px;
@@ -177,7 +177,8 @@ a {
     -webkit-animation: expandToRight 0.5s ease-in-out both 0.5s;
     animation: expandToRight 0.5s ease-in-out both 0.5s; }
   a:hover, a:focus {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #131313; }
     a:hover:after, a:focus:after {
       background: #20f26f;
       -webkit-transform: translate3d(0, 3px, 0);
@@ -201,7 +202,8 @@ a {
     transition: all 0.25s ease-in-out;
     border-radius: 2px; }
 
-.spinner {
+.spinner,
+.spinner-attachments {
   width: 100px;
   height: 100px;
   background-color: #20f26f;
@@ -209,10 +211,10 @@ a {
   -webkit-animation: sk-scaleout 1s infinite ease-in-out;
   animation: sk-scaleout 1s infinite ease-in-out;
   position: fixed;
-  bottom: 10%;
+  bottom: 50%;
   left: 50%;
-  -webkit-transform: translate3d(-50%, 0, 0);
-  transform: translate3d(-50%, 0, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
   z-index: 10; }
 
 p {
@@ -241,15 +243,14 @@ h2 {
 h1 {
   font-size: 48px;
   color: #181818;
-  margin-top: 100px; }
+  margin-top: 200px; }
 
 h2 {
   font-size: 30px;
   color: #131313; }
 
 .container-fluid {
-  -webkit-animation: fadeIn 0.5s ease-in-out;
-  animation: fadeIn 0.5s ease-in-out; }
+  display: none; }
 
 .dribbble-works-list-container {
   min-height: 75vh; }
@@ -262,14 +263,31 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); }
-  .work-attachments-container img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    transform: translate3d(-50%, -50%, 0);
-    max-height: 95%; }
+  background: rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  overflow-x: hidden; }
+  .work-attachments-container .attachments-image-container {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .work-attachments-container .attachments-image-container img {
+      cursor: zoom-in;
+      max-width: 70vh; }
+    .work-attachments-container .attachments-image-container.attachment-big {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start; }
+      .work-attachments-container .attachments-image-container.attachment-big img {
+        max-width: none;
+        cursor: zoom-out; }
   .work-attachments-container .glyphicon-remove {
     font-size: 30px;
     position: absolute;
@@ -291,7 +309,7 @@ ul.dribbble-works-list-container li.row {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 160px 0;
+  margin: 200px 0;
   -webkit-animation: fadeIn 0.5s ease-in-out;
   animation: fadeIn 0.5s ease-in-out; }
   ul.dribbble-works-list-container li.row:nth-child(odd) > div:last-child {
@@ -313,6 +331,8 @@ footer {
 
 body {
   font-family: "inconsolata", Helvetica, Arial, sans-serif; }
+  body.attachments-view {
+    overflow: hidden; }
 
 .of-hidden {
   overflow: hidden; }

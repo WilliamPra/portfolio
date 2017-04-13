@@ -18,6 +18,10 @@
 
 body {
   font-family: $inconsolata;
+
+  &.attachments-view {
+    overflow: hidden;
+  }
 }
 
 .of-hidden {
