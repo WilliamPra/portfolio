@@ -20,7 +20,12 @@
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
                 <h1>PRASZEZINSKI William</h1>
-                <p class="wiliam-description">Designer d’expériences digitales et étudiant en quatrième année à HETIC, je <span class="green">recherche un stage</span> en UI/UX Design pour une période de 6 mois à partir du 19 juin 2017. <a href="mailto:contact@williamp.fr">Je suis également disponible en Freelance</a> 🔥</p>
+                <p class="wiliam-description">
+                    Designer d’expériences digitales et étudiant en quatrième année à HETIC, je
+                    <span class="green">recherche un stage</span>
+                    en UI/UX Design pour une période de 6 mois à partir du 19 juin 2017.
+                    <a href="#" class="mail-button" data-clipboard-text="contact@williamp.fr" data-toggle="tooltip" data-placement="bottom" data-trigger="click" title="contact@williamp.fr copié dans le presse-papier">Je suis également disponible en Freelance</a> 🔥
+                </p>
                 <ul class="socials-list">
                     <li><a class="socials-link" target="_blank" href="https://dribbble.com/WilliamP">Dribbble</a></li>
                     <li><a class="socials-link" target="_blank" href="https://twitter.com/William_Pras">Twitter</a></li>
@@ -39,12 +44,6 @@
             <p class="footer-text"><a class="footer-link" href="#top">Retourner en haut</a> - Développé avec ❤ par <a href="http://valentin-crochemore.fr/" target="_blank">Valentin Crochemore</a></p>
         </footer>
     </div>
-    <!--build:js js/main.min.js-->
-    <script src="js/vendor/jquery-3.2.0.min.js"></script>
-    <script src="js/vendor/handlebars.min-latest.js"></script>
-    <script src="js/vendor/handlebars-intl-with-locales.min.js"></script>
-    <script src="js/main.js"></script>
-    <!--endbuild-->
 
     <script id="dribbble-works-list-template" type="text/x-handlebars-template">
         {{#each works}}
@@ -78,5 +77,14 @@
             </div>
         {{/each}}
     </script>
+
+    <!--build:js js/main.min.js-->
+    <script src="js/vendor/jquery-3.2.0.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/handlebars.min-latest.js"></script>
+    <script src="js/vendor/handlebars-intl-with-locales.min.js"></script>
+    <script src="js/vendor/clipboard.min.js"></script>
+    <script src="js/main.js"></script>
+    <!--endbuild-->
 </body>
 </html>

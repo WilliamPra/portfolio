@@ -3,8 +3,8 @@
 // -------------------------------------------------
 var dribbbleApiUrl = 'https://api.dribbble.com/v1';
 var dribbbleAcessToken = '8b40a3340377aa47a766e103088149201edcb2c1b130e56d20265ac72d0c619c';
-var accessTokenParam = '&access_token=' + dribbbleAcessToken;
-var williamShotsUrl = dribbbleApiUrl + '/users/WilliamP/shots?sort=popularity' + accessTokenParam;
+var accessTokenParam = '?access_token=' + dribbbleAcessToken;
+var williamShotsUrl = dribbbleApiUrl + '/users/WilliamP/shots' + accessTokenParam;
 
 // -------------------------------------------------
 // Handlebars Helpers
@@ -36,6 +36,7 @@ var intlData = {
 // jQuery
 // -------------------------------------------------
 $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip()
 
     // -------------------------------------------------
     // Ajax call to get the 30 last shots
@@ -82,6 +83,20 @@ $(document).ready(function () {
             $('.work-description-container').css('transform', 'translate3d(0, -' + window.pageYOffset * 0.15 + 'px, 0)');
         });
 
+        var clipboard = new Clipboard('.mail-button');
+
+        clipboard.on('success', function(e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+            $('.mail-button').tooltip(e.text)
+        });
+
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+        });
+
         // -------------------------------------------------
         // Event when clicked on "see attachment" button
         // -------------------------------------------------
@@ -98,7 +113,7 @@ $(document).ready(function () {
             // Ajax call to get the first attachment of the good shot
             // -------------------------------------------------
             var index = $(e.target).parents('li.row').index();
-            var williamAttachmentsUrl = dribbbleApiUrl + '/shots/' + data[index].id + '/attachments' + accessTokenParam + '&per_page=1';
+            var williamAttachmentsUrl = dribbbleApiUrl + '/shots/' + data[index].id + '/attachments' + accessTokenParam;
 
             $.get(williamAttachmentsUrl, function (data) {
                 var attachmentsSource = $('#dribbble-attachments-template').html();
