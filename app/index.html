@@ -39,6 +39,7 @@
                 <ul class="dribbble-works-list-container"></ul>
             </div>
         </div>
+        <div class="spinner-attachments"></div>
         <div class="work-attachments-container"></div>
         <footer>
             <p class="footer-text"><a class="footer-link" href="#top">Retourner en haut</a> - Développé avec ❤ par <a href="http://valentin-crochemore.fr/" target="_blank">Valentin Crochemore</a></p>
@@ -50,11 +51,28 @@
             <li class="row">
                 <div class="col-xs-12 col-sm-5">
                     <div class="work-image-container">
-                        <img class="work-image" src="{{images.normal}}" alt="{{title}}">
-                        <div class="geometric-forms"></div>
+                        <img
+                                class="work-image"
+                                src="{{images.normal}}"
+                                alt="{{title}}"
+                                data-parallax='{
+                                    "y": -50
+                                }'
+                        >
+                        <div
+                                class="geometric-forms"
+                                data-parallax='{
+                                    "y": 300
+                                }'
+                        ></div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-7 work-description-container">
+                <div
+                        class="col-xs-12 col-sm-7 work-description-container"
+                        data-parallax='{
+                            "y": -100
+                        }'
+                >
                     <h2>{{title}}</h2>
                     <p class="work-date">{{formatDate created_at "short"}}</p>
                     <div class="work-description">
@@ -69,13 +87,10 @@
     </script>
 
     <script id="dribbble-attachments-template" type="text/x-handlebars-template">
-        <div class="spinner-attachments"></div>
-        {{#each attachments}}
-            <span class="glyphicon glyphicon-remove"></span>
-            <div class="attachments-image-container">
-                <img src="{{url}}" alt="attachment-{{id}}">
-            </div>
-        {{/each}}
+        <span class="glyphicon glyphicon-remove"></span>
+        <div class="attachments-image-container">
+            <img src="{{attachment.url}}" alt="attachment-{{id}}">
+        </div>
     </script>
 
     <!--build:js js/main.min.js-->
@@ -83,6 +98,7 @@
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/handlebars.min-latest.js"></script>
     <script src="js/vendor/handlebars-intl-with-locales.min.js"></script>
+    <script src="js/vendor/jquery.parallax-scroll.js"></script>
     <script src="js/vendor/clipboard.min.js"></script>
     <script src="js/main.js"></script>
     <!--endbuild-->

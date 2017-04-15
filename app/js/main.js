@@ -42,8 +42,6 @@ $(document).ready(function () {
     // Ajax call to get the 30 last shots
     // -------------------------------------------------
     $.get(williamShotsUrl, function (data) {
-        console.log(data);
-
         // -------------------------------------------------
         // Handlebars template for the list of shots
         // Return the 5 most popular shots order by descending date
@@ -75,26 +73,11 @@ $(document).ready(function () {
         }, 500);
 
         // -------------------------------------------------
-        // Parallax effect on shots' images, forms and texts
+        // Copy email to the clipboard
         // -------------------------------------------------
-        $(window).scroll(function (e) {
-            $('.work-image').css('transform', 'translate3d(0, -' + window.pageYOffset * 0.2 + 'px, 0)');
-            $('.geometric-forms').css('transform', 'translate3d(0, -' + window.pageYOffset * 0.1 + 'px, 0)');
-            $('.work-description-container').css('transform', 'translate3d(0, -' + window.pageYOffset * 0.15 + 'px, 0)');
-        });
-
         var clipboard = new Clipboard('.mail-button');
-
-        clipboard.on('success', function(e) {
-            console.info('Action:', e.action);
-            console.info('Text:', e.text);
-            console.info('Trigger:', e.trigger);
-            $('.mail-button').tooltip(e.text)
-        });
-
-        clipboard.on('error', function(e) {
-            console.error('Action:', e.action);
-            console.error('Trigger:', e.trigger);
+        $('.mail-button').click(function (e) {
+           e.preventDefault();
         });
 
         // -------------------------------------------------
@@ -103,6 +86,8 @@ $(document).ready(function () {
         $('.work-attachments-button').click(function(e) {
             e.preventDefault();
 
+            $('.spinner-attachments').fadeIn();
+
             // -------------------------------------------------
             // Show attachment Pop In
             // -------------------------------------------------
@@ -110,34 +95,37 @@ $(document).ready(function () {
             $('.work-attachments-container').fadeIn().css('display', 'flex');
 
             // -------------------------------------------------
-            // Ajax call to get the first attachment of the good shot
+            // Ajax call to get the attachments of the good shot
             // -------------------------------------------------
             var index = $(e.target).parents('li.row').index();
             var williamAttachmentsUrl = dribbbleApiUrl + '/shots/' + data[index].id + '/attachments' + accessTokenParam;
 
             $.get(williamAttachmentsUrl, function (data) {
+                // -------------------------------------------------
+                // Handlebars template for the first attachment of the shot
+                // -------------------------------------------------
                 var attachmentsSource = $('#dribbble-attachments-template').html();
                 var attachmentsTemplate = Handlebars.compile(attachmentsSource);
-                var attachmentsContext = { attachments: data };
+                var attachmentsContext = { attachment: data[0] };
                 var attachmentsHtml = attachmentsTemplate(attachmentsContext);
-
                 $('.work-attachments-container').html(attachmentsHtml);
 
+                $('.spinner-attachments').fadeOut();
+
+                // -------------------------------------------------
+                // Zoom in and out when clicking on image
+                // -------------------------------------------------
                 $('.attachments-image-container img').click(function () {
                     $('.attachments-image-container').toggleClass('attachment-big');
                 });
 
-                $('.spinner-attachments').fadeOut();
-                $('.glyphicon-remove').click(function (e) {
+                // -------------------------------------------------
+                // Hide attachment container when cross or anything but the image is clicked
+                // -------------------------------------------------
+                $('.work-attachments-container, .glyphicon-remove').click(function (e) {
                     $('.work-attachments-container').fadeOut();
                     $('body').removeClass('attachments-view');
                 });
-
-                $('.work-attachments-container').click(function() {
-                    $('.work-attachments-container').fadeOut();
-                    $('body').removeClass('attachments-view');
-                });
-
                 $('.work-attachments-container img').click(function(e) {
                     e.stopPropagation();
                     return false;
@@ -146,6 +134,9 @@ $(document).ready(function () {
         });
     });
 
+    // -------------------------------------------------
+    // Animate scroll when "return to the top" button is clicked
+    // -------------------------------------------------
     $('a[href="#top"]').click(function(e){
         e.preventDefault();
 

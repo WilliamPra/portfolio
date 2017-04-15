@@ -98,13 +98,13 @@
 
 @-webkit-keyframes boxShadow {
   from {
-    box-shadow: 0; }
+    box-shadow: none; }
   to {
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1); } }
 
 @keyframes boxShadow {
   from {
-    box-shadow: 0; }
+    box-shadow: none; }
   to {
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1); } }
 
@@ -216,6 +216,9 @@ a {
   -webkit-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
   z-index: 10; }
+
+.spinner-attachments {
+  display: none; }
 
 p {
   color: #131313; }

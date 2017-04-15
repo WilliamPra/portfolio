@@ -14,9 +14,11 @@ $default-duration: .5s;
 $default-ease: ease-in-out;
 $default-delay: .5s;
 $hover-duration: .25s;
+$parallax-duration: .1s;
 
 $main-transition: all $default-duration $default-ease;
 $hover-transition: all $hover-duration $default-ease;
+$parallax-transition: all $parallax-duration $default-ease;
 
 $fade-in: fadeIn $default-duration $default-ease;
 $expand-to-right: expandToRight $default-duration $default-ease both $default-delay;
@@ -92,7 +94,7 @@ $box-shadow: boxShadow $default-duration $default-ease both 1s;
 
 @keyframes boxShadow {
   from {
-    box-shadow: 0;
+    box-shadow: none;
   }
 
   to {
