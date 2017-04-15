@@ -6,31 +6,86 @@ ul {
       display: inline-block;
       margin-right: 50px;
     }
+
+    @include mobile {
+      margin-top: 30px;
+
+      li {
+        margin: 0 20px 20px 0;
+      }
+    }
+
+    @include tablet {
+      li {
+        margin-bottom: 30px;
+      }
+    }
   }
 
   &.dribbble-works-list-container {
     li.row {
-      display: flex;
-      align-items: center;
       margin: 200px 0;
       animation: $fade-in;
 
+      .dribbble-works-list-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
       &:nth-child(odd) {
-        > div:last-child {
-          margin-left: 8.33333333%;
+        .dribbble-works-list-wrapper {
+          > div:last-child {
+            margin-left: 8.33333333%;
+          }
+        }
+       }
+
+      &:nth-child(even) {
+        .dribbble-works-list-wrapper {
+          flex-direction: row-reverse;
+
+          > div:last-child {
+            margin-right: 8.33333333%;
+          }
+
+          .work-image-container {
+            &.visible {
+              animation: $slide-to-left;
+            }
+          }
         }
       }
 
-      &:nth-child(even) {
-        flex-direction: row-reverse;
+      &:last-child {
+        margin-bottom: 100px;
+      }
 
-        > div:last-child {
-          margin-right: 8.33333333%;
+      @include ipad {
+        .dribbble-works-list-wrapper {
+          display: flex !important;
+        }
+      }
+
+      @include mobile {
+        margin: 50px 0;
+
+        .dribbble-works-list-wrapper {
+          display: block;
         }
 
-        .work-image-container {
-          &.visible {
-            animation: $slide-to-left;
+        &:nth-child(odd) {
+          .dribbble-works-list-wrapper {
+            > div:last-child {
+              margin-left: 0;
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          .dribbble-works-list-wrapper {
+            > div:last-child {
+              margin-right: 0;
+            }
           }
         }
       }

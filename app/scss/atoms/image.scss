@@ -19,7 +19,6 @@
         height: 100%;
         background: #fff;
         z-index: 10;
-        transition: $main-transition;
         animation: $reduce-to-right;
       }
 
@@ -33,14 +32,23 @@
 
     &:first-child,
     &:nth-child(5) {
-      .work-image-container {
-        .geometric-forms {
-          top: -60px;
-          right: -60px;
-          width: 184px;
-          height: 184px;
-          border-radius: 50%;
-          background: url("../../images/waves2.svg");
+      .dribbble-works-list-wrapper {
+        .work-image-container {
+          .geometric-forms {
+            top: -60px;
+            right: -60px;
+            width: 184px;
+            height: 184px;
+            border-radius: 50%;
+            background: url("../../images/waves2.svg") 50% 50%;
+
+            @include mobile {
+              width: 84px;
+              height: 84px;
+              top: -10px;
+              right: -10px;
+            }
+          }
         }
       }
     }
@@ -54,31 +62,56 @@
           height: 112px;
           background: rgba(255, 134, 173, 0.3);
           transform: translate3d(-50%, 0, 0);
+
+          @include mobile {
+            top: -25px;
+            left: 89px;
+            width: 116px;
+            height: 56px;
+          }
         }
       }
     }
 
     &:nth-child(3) {
-      .work-image-container {
-        .geometric-forms {
-          top: -60px;
-          left: 100px;
-          width: 184px;
-          height: 184px;
-          background: rgba(0, 198, 255, 0.3);
-          border-radius: 50%;
+      .dribbble-works-list-wrapper {
+        .work-image-container {
+          .geometric-forms {
+            top: -60px;
+            left: 100px;
+            width: 184px;
+            height: 184px;
+            background: rgba(0, 198, 255, 0.3);
+            border-radius: 50%;
+
+            @include mobile {
+              width: 84px;
+              height: 84px;
+              top: -40px;
+            }
+          }
         }
       }
     }
 
     &:nth-child(4) {
-      .work-image-container {
-        .geometric-forms {
-          top: -82px;
-          left: -57px;
-          width: 232px;
-          height: 127px;
-          background: url("../../images/waves.svg");
+      .dribbble-works-list-wrapper {
+        .work-image-container {
+          .geometric-forms {
+            top: -82px;
+            left: -57px;
+            width: 232px;
+            height: 127px;
+            background: url("../../images/waves.svg") 50% 50%;
+
+            @include mobile {
+              width: 116px;
+              height: 63px;
+              background-size: cover;
+              top: -36px;
+              left: 17px;
+            }
+          }
         }
       }
     }

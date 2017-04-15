@@ -48,4 +48,23 @@
     color: white;
     cursor: pointer;
   }
+
+  @include tablet {
+    overflow-x: auto;
+
+    .attachments-image-container {
+      img {
+        max-width: 50vh;
+      }
+
+      &.attachment-big {
+        justify-content: flex-start;
+      }
+    }
+
+    .glyphicon-remove {
+      top: 10px;
+      right: 10px;
+    }
+  }
 }

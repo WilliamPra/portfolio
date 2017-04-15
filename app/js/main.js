@@ -66,7 +66,7 @@ $(document).ready(function () {
         // Hide spinner and show content when Shots loaded
         // Animate links and images when shots loaded
         // -------------------------------------------------
-        $('.spinner').fadeOut();
+        $('.spinner-container').fadeOut();
         setTimeout(function () {
             $('.container-fluid').fadeIn();
             $('a, .work-image-container').addClass('visible');
@@ -86,7 +86,7 @@ $(document).ready(function () {
         $('.work-attachments-button').click(function(e) {
             e.preventDefault();
 
-            $('.spinner-attachments').fadeIn();
+            $('.spinner-attachments-container').fadeIn();
 
             // -------------------------------------------------
             // Show attachment Pop In
