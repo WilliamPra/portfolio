@@ -86,6 +86,9 @@ $(document).ready(function () {
         $('.work-attachments-button').click(function(e) {
             e.preventDefault();
 
+            // -------------------------------------------------
+            // Hide spinner when attachment loaded
+            // -------------------------------------------------
             $('.spinner-attachments-container').fadeIn();
 
             // -------------------------------------------------

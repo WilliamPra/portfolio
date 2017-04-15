@@ -11,12 +11,19 @@
     <link rel="stylesheet" href="css/app/main.min.css">
 </head>
 <body>
-    <div class="spinner"></div>
+    <div class="spinner-container">
+        <div class="spinner"></div>
+    </div>
     <div id="top" class="container-fluid">
         <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
                 <h1>PRASZEZINSKI William</h1>
-                <p class="wiliam-description">Designer d’expériences digitales et étudiant en quatrième année à HETIC, je <span class="green">recherche un stage</span> en UI/UX Design pour une période de 6 mois à partir du 19 juin 2017. <a href="mailto:contact@williamp.fr">Je suis également disponible en Freelance</a> 🔥</p>
+                <p class="wiliam-description">
+                    Designer d’expériences digitales et étudiant en quatrième année à HETIC, je
+                    <span class="green">recherche un stage</span>
+                    en UI/UX Design pour une période de 6 mois à partir du 19 juin 2017.
+                    <a href="#" class="mail-button" data-clipboard-text="contact@williamp.fr" data-toggle="tooltip" data-placement="bottom" data-trigger="click" title="contact@williamp.fr copié dans le presse-papier">Je suis également disponible en Freelance</a> 🔥
+                </p>
                 <ul class="socials-list">
                     <li><a class="socials-link" target="_blank" href="https://dribbble.com/WilliamP">Dribbble</a></li>
                     <li><a class="socials-link" target="_blank" href="https://twitter.com/William_Pras">Twitter</a></li>
@@ -26,44 +33,74 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-10 col-xs-offset-1 of-hidden">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 of-hidden">
                 <ul class="dribbble-works-list-container"></ul>
             </div>
+        </div>
+        <div class="spinner-attachments-container">
+            <div class="spinner-attachments"></div>
         </div>
         <div class="work-attachments-container"></div>
         <footer>
             <p class="footer-text"><a class="footer-link" href="#top">Retourner en haut</a> - Développé avec ❤ par <a href="http://valentin-crochemore.fr/" target="_blank">Valentin Crochemore</a></p>
         </footer>
     </div>
-    <script src="js/main.min.js"></script>
 
     <script id="dribbble-works-list-template" type="text/x-handlebars-template">
         {{#each works}}
             <li class="row">
-                <div class="col-xs-5">
-                    <div class="work-image-container">
-                        <img class="work-image" src="{{images.normal}}" alt="{{title}}">
+                <div class="dribbble-works-list-wrapper col-xs-12">
+                    <div class="col-xs-12 col-sm-5">
+                        <div class="work-image-container">
+                            <!--<div-->
+                                    <!--class="mask"-->
+                                    <!--data-parallax='{-->
+                                        <!--"y": -50-->
+                                    <!--}'-->
+                            <!--&gt;</div>-->
+                            <img
+                                    class="work-image"
+                                    src="{{images.normal}}"
+                                    alt="{{title}}"
+                                    data-parallax='{
+                                        "y": -50
+                                    }'
+                            >
+                            <div
+                                    class="geometric-forms"
+                                    data-parallax='{
+                                        "y": 300
+                                    }'
+                            ></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-7">
-                    <h2>{{title}}</h2>
-                    <p class="work-date">{{formatDate created_at "short"}}</p>
-                    <div class="work-description">
-                        <p>{{list tags}}</p>
-                    </div>
-                    {{#if attachments_count}}
+                    <div
+                            class="col-xs-12 col-sm-6 work-description-container"
+                            data-parallax='{
+                                "y": -100
+                            }'
+                    >
+                        <h2>{{title}}</h2>
+                        <p class="work-date">{{formatDate created_at "short"}}</p>
+                        <div class="work-description">
+                            <p>{{list tags}}</p>
+                        </div>
+                        {{#if attachments_count}}
                         <a class="work-attachments-button" href="#">Cliquez ici pour le voir en HD</a>
-                    {{/if}}
+                        {{/if}}
+                    </div>
                 </div>
             </li>
         {{/each}}
     </script>
 
     <script id="dribbble-attachments-template" type="text/x-handlebars-template">
-        {{#each attachments}}
-            <span class="glyphicon glyphicon-remove"></span>
-            <img src="{{url}}" alt="attachment-{{id}}">
-        {{/each}}
+        <span class="glyphicon glyphicon-remove"></span>
+        <div class="attachments-image-container">
+            <img src="{{attachment.url}}" alt="attachment-{{id}}">
+        </div>
     </script>
+
+    <script src="js/main.min.js"></script>
 </body>
 </html>
