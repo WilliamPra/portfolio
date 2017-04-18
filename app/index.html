@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/app/main.min.css">
+
+    <<!--build:css css/app/main.min.css-->
+    <link rel="stylesheet" href="css/vendor/reset.css">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app/main.css">
+    <!--endbuild-->
 
     <title>William Praszezinski | UI & UX Designer Freelance</title>
 
@@ -122,6 +127,14 @@
         </div>
     </script>
 
-    <script src="js/main.min.js"></script>
+    <!--build:js js/main.min.js-->
+    <script src="js/vendor/jquery-3.2.0.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/handlebars.min-latest.js"></script>
+    <script src="js/vendor/handlebars-intl-with-locales.min.js"></script>
+    <script src="js/vendor/jquery.parallax-scroll.js"></script>
+    <script src="js/vendor/clipboard.min.js"></script>
+    <script src="js/main.js"></script>
+    <!--endbuild-->
 </body>
 </html>

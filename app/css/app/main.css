@@ -220,6 +220,7 @@ a {
     width: 0;
     height: 2px;
     background: #181818;
+    -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
     border-radius: 2px; }
 
@@ -228,7 +229,7 @@ a {
   width: 100px;
   height: 100px;
   position: fixed;
-  bottom: 50%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
