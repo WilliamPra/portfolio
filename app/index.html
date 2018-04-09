@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <<!--build:css css/app/main.min.css-->
+    <!--build:css css/app/main.min.css-->
     <link rel="stylesheet" href="css/vendor/reset.css">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/app/main.css">
@@ -50,10 +50,8 @@
             <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
                 <h1>PRASZEZINSKI William</h1>
                 <p class="wiliam-description">
-                    Designer d’expériences digitales et étudiant en quatrième année à HETIC, je
-                    <span class="green">recherche un stage</span>
-                    en UI/UX Design pour une période de 6 mois à partir du 19 juin 2017.
-                    <a href="#" class="mail-button" data-clipboard-text="contact@williamp.fr" data-toggle="tooltip" data-placement="bottom" data-trigger="click" title="contact@williamp.fr a été copié dans votre presse-papier">Je suis également disponible en Freelance</a> 🔥
+                    Designer d’expériences digitales à UZIK et étudiant en cinquième année à HETIC.
+                    <a href="#" class="mail-button" data-clipboard-text="contact@williamp.fr" data-toggle="tooltip" data-placement="bottom" data-trigger="click" title="contact@williamp.fr a été copié dans votre presse-papier">Je suis également disponible en Freelance</a> pour vous accompagner dans vos différents projets 🔥
                 </p>
                 <ul class="socials-list">
                     <li><a class="socials-link" target="_blank" href="https://dribbble.com/WilliamP">Dribbble</a></li>
@@ -74,66 +72,70 @@
         </div>
         <div class="work-attachments-container"></div>
         <footer>
-            <p class="footer-text"><a class="footer-link" href="#top">Retourner en haut</a> - Développé avec ❤️ par <a href="http://valentin-crochemore.fr/" target="_blank">Valentin Crochemore</a></p>
+            <p class="footer-text">
+                <!--<a class="footer-link" href="#top">Retourner en haut</a> - -->
+                Développé avec ❤️ par <a href="http://valentin-crochemore.fr/" target="_blank">Valentin Crochemore</a>
+            </p>
         </footer>
     </div>
 
-    <script id="dribbble-works-list-template" type="text/x-handlebars-template">
-        {{#each works}}
-            <li class="row">
-                <div class="dribbble-works-list-wrapper col-xs-12">
-                    <div class="col-xs-12 col-sm-5">
-                        <div class="work-image-container">
-                            <img
-                                    class="work-image"
-                                    src="{{images.hidpi}}"
-                                    alt="{{title}}"
-                                    data-parallax='{
-                                        "y": -50
-                                    }'
-                            >
-                            <div
-                                    class="geometric-forms"
-                                    data-parallax='{
-                                        "y": 300
-                                    }'
-                            ></div>
-                        </div>
-                    </div>
-                    <div
-                            class="col-xs-12 col-sm-6 work-description-container"
-                            data-parallax='{
-                                "y": -100
-                            }'
-                    >
-                        <h2>{{title}}</h2>
-                        <p class="work-date">{{formatDate created_at "short"}}</p>
-                        <div class="work-description">
-                            <p>{{list tags}}</p>
-                        </div>
-                        {{#if attachments_count}}
-                        <a class="work-attachments-button" href="#">Cliquez ici pour le voir en HD</a>
-                        {{/if}}
-                    </div>
-                </div>
-            </li>
-        {{/each}}
-    </script>
+    <!--<script id="dribbble-works-list-template" type="text/x-handlebars-template">-->
+        <!--{{#each works}}-->
+            <!--<li class="row">-->
+                <!--<div class="dribbble-works-list-wrapper col-xs-12">-->
+                    <!--<div class="col-xs-12 col-sm-5">-->
+                        <!--<div class="work-image-container">-->
+                            <!--<img-->
+                                    <!--class="work-image"-->
+                                    <!--src="{{images.hidpi}}"-->
+                                    <!--alt="{{title}}"-->
+                                    <!--data-parallax='{-->
+                                        <!--"y": -50-->
+                                    <!--}'-->
+                            <!--&gt;-->
+                            <!--<div-->
+                                    <!--class="geometric-forms"-->
+                                    <!--data-parallax='{-->
+                                        <!--"y": 300-->
+                                    <!--}'-->
+                            <!--&gt;</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div-->
+                            <!--class="col-xs-12 col-sm-6 work-description-container"-->
+                            <!--data-parallax='{-->
+                                <!--"y": -100-->
+                            <!--}'-->
+                    <!--&gt;-->
+                        <!--<h2>{{title}}</h2>-->
+                        <!--<h1>{{created_at}}</h1>-->
+                        <!--&lt;!&ndash;<p class="work-date">{{formatDate created_at "short"}}</p>&ndash;&gt;-->
+                        <!--<div class="work-description">-->
+                            <!--<p>{{list tags}}</p>-->
+                        <!--</div>-->
+                        <!--{{#if attachments_count}}-->
+                        <!--<a class="work-attachments-button" href="#">Cliquez ici pour le voir en HD</a>-->
+                        <!--{{/if}}-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+        <!--{{/each}}-->
+    <!--</script>-->
 
-    <script id="dribbble-attachments-template" type="text/x-handlebars-template">
-        <span class="glyphicon glyphicon-remove"></span>
-        <div class="attachments-image-container">
-            <img src="{{attachment.url}}" alt="attachment-{{id}}">
-        </div>
-    </script>
+    <!--<script id="dribbble-attachments-template" type="text/x-handlebars-template">-->
+        <!--<span class="glyphicon glyphicon-remove"></span>-->
+        <!--<div class="attachments-image-container">-->
+            <!--<img src="{{attachment.url}}" alt="attachment-{{id}}">-->
+        <!--</div>-->
+    <!--</script>-->
 
-    <!--build:js js/main.min.js-->
+    <!--&lt;!&ndash;build:js js/main.min.js&ndash;&gt;-->
     <script src="js/vendor/jquery-3.2.0.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/vendor/handlebars.min-latest.js"></script>
-    <script src="js/vendor/handlebars-intl-with-locales.min.js"></script>
+    <!--<script src="js/vendor/handlebars.min-latest.js"></script>-->
+    <!--<script src="js/vendor/handlebars-intl-with-locales.min.js"></script>-->
     <script src="js/vendor/jquery.parallax-scroll.js"></script>
-    <script src="js/vendor/clipboard.min.js"></script>
+    <!--<script src="js/vendor/clipboard.min.js"></script>-->
     <script src="js/main.js"></script>
     <!--endbuild-->
 </body>
